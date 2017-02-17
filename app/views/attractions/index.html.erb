@@ -1,0 +1,10 @@
+<h1>Attraction Index</h1>
+<ul>
+<% @attractions.each do |ride| %>
+  <li><%= link_to("Go on #{ride.name}", attraction_path(ride)) unless current_user.admin %></li>
+  <li><%= link_to("Show #{ride.name}", attraction_path(ride)) if current_user.admin %></li>
+<% end %>
+</ul>
+<% if current_user.admin %>
+  <%= link_to "New Attraction", new_attraction_path %>
+<% end %>

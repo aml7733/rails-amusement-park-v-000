@@ -49,7 +49,7 @@ describe 'Feature Test: User Signup', :type => :feature do
     )
     visit '/users/1'
     expect(current_path).to eq('/')
-    expect(page).to have_content("Sign Up")
+    expect(page).to have_content("Sign up")
   end
 
   it 'successfully signs up as admin' do
